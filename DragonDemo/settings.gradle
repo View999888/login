@@ -1,0 +1,6 @@
+include ':basepop'
+include ':utils'
+include ':bean'
+include ':fragme'
+include ':app'
+rootProject.name = "DragonDemo"

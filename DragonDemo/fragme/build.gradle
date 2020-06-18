@@ -1,0 +1,46 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    api project(path: ':bean')
+    api project(path: ':utils')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+
+    api "com.squareup.retrofit2:retrofit:$retrofit"
+    api 'com.squareup.retrofit2:converter-gson:2.4.0' // 必要依赖，解析json字符所用
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0' // 必要依赖，和Rxjava结合必须用到，下面会提到// 必要依赖，和Rxjava结合必须用到，下面会提到
+    api "io.reactivex.rxjava2:rxjava:$rxjava2" // 必要rxjava2依赖
+    api "io.reactivex.rxjava2:rxandroid:$rxjava2" // 必要rxandrroid依赖，切线程时需要用到
+
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp3"
+
+    implementation "com.github.bumptech.glide:glide:$glide"
+
+}

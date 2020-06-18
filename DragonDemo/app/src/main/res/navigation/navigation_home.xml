@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/mainPageFragment">
+
+    <tab_fragment
+        android:id="@+id/mainPageFragment"
+        android:name="com.wkx.fragment.MainPageFragment"
+        android:label="MainPageFragment">
+      <!--  <action
+            android:id="@+id/toAdvert"
+            app:destination="@id/advertFragment" />-->
+    </tab_fragment>
+    <tab_fragment
+        android:id="@+id/courseFragment"
+        android:name="com.wkx.fragment.CourseFragment"
+        android:label="CourseFragment"/>
+    <tab_fragment
+        android:id="@+id/vipFragment"
+        android:name="com.wkx.fragment.VIPFragment"
+        android:label="VIPFragment"/>
+    <tab_fragment
+        android:id="@+id/dataFragment"
+        android:name="com.wkx.fragment.DataFragment"
+        android:label="DataFragment"/>
+    <tab_fragment
+        android:id="@+id/mineFragment"
+        android:name="com.wkx.fragment.MineFragment"
+        android:label="MineFragment"/>
+
+</navigation>
